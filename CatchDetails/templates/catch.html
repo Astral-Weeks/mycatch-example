@@ -1,0 +1,63 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block content %}
+
+<script src="https://unpkg.com/htmx.org@2.0.1"></script>
+
+<style>
+    h1 {
+        text-align: center;
+    }
+
+    form p {
+        /* display: flex;
+        flex-direction: row;
+        justify-content: space-evenly; */
+        border: 3px solid rgb(from #71BC78 r g b / 0.4);
+        border-radius: 15px;
+        width: 100%;
+        /* max-width: 800px; */
+        padding: 10px 0px 10px 0px;
+        font-size: 1.25em;
+        margin: 0 0 0 0;
+    }
+
+    input[type="text"], input[type="number"], input[type="list"] {
+        width:  90%;
+        /* checkbox: blue; */
+        /* border-color: blue; */
+    }
+
+    /* input { */
+        /* border-color: blue; */
+        /* width: 90%; */
+    /* } */
+
+    /* checkbox {
+        color: blue;
+    } */
+
+    #submit-button {
+        background-color: #17B169;
+        color: white;
+        border-radius: 10px;
+        border-color: grey;
+        padding: 1% 1% 1% 1%;
+        width: 100%;
+        font-size: 1.5em;
+    }
+</style>
+<br>
+<!-- <h1>NZ MyCatch</h1> -->
+<hr>
+
+<form action="/catch", method="post" enctype="multipart/form-data">
+    {% csrf_token %}
+    {{form.as_p}}
+    <input id="submit-button" type="submit">
+     <!-- <button>Submit</button> -->
+</form>
+
+
+{% endblock %}

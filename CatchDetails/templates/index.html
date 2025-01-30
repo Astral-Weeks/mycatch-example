@@ -1,0 +1,56 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block content %}
+
+<style>
+    h1, h3, #catch-link, p {
+        text-align: center;
+    }
+
+    #catch-link {
+        font-size: 1.4em;
+    }
+    
+    p {
+        font-size: 1.2em;
+    }
+
+    #end-hr {
+        border-bottom: 10px solid #71BC78;
+    }
+</style>
+
+<!-- <h1>NZ MyCatch</h1> -->
+<hr>
+<div>
+    <br>
+    <hr>
+</div>
+<br>
+<p class="info">Your catch information is completely voluntary. Volunteer as much or as little
+    information about your catch as you wish.
+</p>
+<p class="info">We assume users share information in good faith.</p>
+<br>
+<hr>
+<a href="{% url 'catch' %}"><p id="catch-link">Login to record a catch</p></a>
+<hr>
+<br>
+<h3>Why MyCatch?</h3>
+<br>
+<p class="info">The more information we have about our fish populations, the better we can
+    sustain our waterways and understand their current health and status, which
+    consequently helps all of our anglers. 
+</p>
+<p class="info">The people who know our fish best are our anglers. By sharing as much
+    information as you can, or wish to, about the number of fish you catch,
+    release or take home, and what the size or weight of the catch is, you
+    can help us better estimate the current population numbers in our rivers.
+</p>
+
+<br>
+<br>
+<hr id="end-hr">
+
+{% endblock %}
